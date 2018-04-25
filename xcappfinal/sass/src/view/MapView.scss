@@ -1,0 +1,68 @@
+//自定义变量
+$map-focus-text-color: #ffff00;
+$map-default-text-color: #ffffff;
+
+@include extjs-button-medium-ui(
+        $ui: 'map-tool-ui',
+        $border-width: 0px,
+        $inner-border-width: 0px,
+        $background-color: $MyThemeFocusColor,
+        $color: $map-default-text-color,
+        $color-over: $map-focus-text-color,
+        $color-pressed: $map-focus-text-color,
+        $text-padding: 5px,
+        $padding: 3px,
+        $font-size: 12px
+);
+
+//地图工具栏
+.jz-tool-terrain {
+  background-image: url("images/jz/terrain.png");
+  background-size: contain;
+}
+
+.jz-tool-vector {
+  background-image: url("images/jz/vector.png");
+  background-size: contain;
+}
+
+.jz-tool-image {
+  background-image: url("images/jz/image.png");
+  background-size: contain;
+}
+
+.jz-tool-fullscreen {
+  background-image: url("images/jz/fullscreen.png");
+  background-size: contain;
+}
+
+.jz-tool-fullextent {
+  background-image: url("images/jz/fullextent.png");
+  background-size: contain;
+}
+
+.jz-tool-query {
+  background-image: url("images/jz/query.png");
+  background-size: contain;
+}
+
+.jz-tool-special {
+  background-image: url("images/jz/special.png");
+  background-size: contain;
+}
+
+.jz-tool-clear {
+  background-image: url("images/jz/clear.png");
+  background-size: contain;
+}
+
+.jz-tool-opacity {
+  background-image: url("images/jz/opacity.png");
+  background-size: contain;
+}
+
+//地图插件
+.jz-plugin-legend {
+  background-image: url("images/jz/legend.png");
+  background-size: contain;
+}

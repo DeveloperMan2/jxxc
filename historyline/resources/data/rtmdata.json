@@ -1,0 +1,212 @@
+{
+  "text": ".",
+  "children": [
+    {
+      "task": "南昌市[4]",
+      "duration": "",
+      "inspector": "",
+      "phone": "",
+      "state": "",
+      "expanded": true,
+      "children": [
+        {
+          "task": "东湖区[1]",
+          "duration": "",
+          "state": "",
+          "inspector": "",
+          "phone": "",
+          "expanded": true,
+          "children": [
+            {
+              "task": "东湖水库[3]",
+              "name":"东湖水库",
+              "addr":"沧州东街路东平村",
+              "duration": "",
+              "state": "",
+              "inspector": "",
+              "phone": "",
+              "expanded": true,
+              "lat": 28.52964,
+              "lgt": 115.09277,
+              "type": "reservoir",
+              "children": [
+                {
+                  "task": "东湖巡检1",
+                  "duration": "8-12",
+                  "state": "巡检中",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "东湖巡检2",
+                  "duration": "9-10",
+                  "state": "未巡检",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "东湖巡检3",
+                  "duration": "9-10",
+                  "state": "正常",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "task": "青山湖区[1]",
+          "duration": "",
+          "state": "",
+          "inspector": "",
+          "phone": "",
+          "expanded": true,
+          "children": [
+            {
+              "task": "青山湖水库[3]",
+              "name":"青山湖水库",
+              "addr":"村寨村东街路东平村",
+              "duration": "",
+              "state": "",
+              "inspector": "",
+              "phone": "",
+              "expanded": true,
+              "lat": 28.34975,
+              "lgt": 115.642074,
+              "type": "reservoir",
+              "children": [
+                {
+                  "task": "青山湖巡检1",
+                  "duration": "8-12",
+                  "state": "巡检中",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "青山湖巡检2",
+                  "duration": "9-10",
+                  "state": "未巡检",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "青山湖巡检3",
+                  "duration": "9-10",
+                  "state": "正常",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "task": "青云谱区[1]",
+          "duration": "",
+          "state": "",
+          "inspector": "",
+          "phone": "",
+          "expanded": true,
+          "children": [
+            {
+              "task": "青云谱水库[3]",
+              "name":"青云谱水库",
+              "addr":"小溪村东街路东平村",
+              "duration": "",
+              "state": "",
+              "inspector": "",
+              "phone": "",
+              "lat": 28.28068,
+              "lgt": 115.83194,
+              "type": "reservoir",
+              "expanded": true,
+              "children": [
+                {
+                  "task": "青云谱巡检1",
+                  "duration": "8-12",
+                  "state": "巡检中",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "青云谱巡检2",
+                  "duration": "9-10",
+                  "state": "未巡检",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "青云谱巡检3",
+                  "duration": "9-10",
+                  "state": "正常",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "task": "西湖区[1]",
+          "duration": "",
+          "state": "",
+          "inspector": "",
+          "phone": "",
+          "expanded": true,
+          "children": [
+            {
+              "task": "西湖水库[3]",
+              "name":"西湖水库",
+              "addr":"南路中路东平村",
+              "duration": "",
+              "state": "",
+              "inspector": "",
+              "phone": "",
+              "lat": 28.314394,
+              "lgt": 116.010164,
+              "type": "reservoir",
+              "expanded": true,
+              "children": [
+                {
+                  "task": "西湖巡检1",
+                  "duration": "8-12",
+                  "state": "异常",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "西湖巡检2",
+                  "duration": "9-10",
+                  "state": "未巡检",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                },
+                {
+                  "task": "西湖巡检3",
+                  "duration": "9-10",
+                  "state": "正常",
+                  "inspector": "张三",
+                  "phone": "18888889999",
+                  "leaf": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,7 @@
+@include extjs-panel-ui(
+        $ui: 'chart-panel',
+        $ui-body-background-color: $MyThemeCommonBGColor,
+        $ui-border-color: $MyThemeColor,
+        $ui-border-width: 1px,
+        $ui-padding: 3px
+);

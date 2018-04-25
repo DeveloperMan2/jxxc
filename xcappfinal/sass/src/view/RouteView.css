@@ -1,0 +1,58 @@
+/*
+Error: Undefined mixin 'extjs-panel-ui'.
+        on line 1 of BusinessView.scss, in `extjs-panel-ui'
+        from line 1 of BusinessView.scss
+
+1: @include extjs-panel-ui(
+2:         $ui: 'chart-panel',
+3:         $ui-header-color: #fff,
+4:         $ui-header-glyph-color: #fff,
+5:         $ui-header-glyph-opacity: 1,
+6:         $ui-header-font-size: 14px,
+
+Backtrace:
+BusinessView.scss:1:in `extjs-panel-ui'
+BusinessView.scss:1
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:351:in `block in visit_mixin'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:98:in `block in with_mixin'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:98:in `with_mixin'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:349:in `visit_mixin'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `block in with_base'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:115:in `with_frame'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/stack.rb:79:in `with_base'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:160:in `visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `map'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/base.rb:36:in `visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:159:in `visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/visitors/perform.rb:8:in `visit'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:36:in `css_tree'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/engine.rb:298:in `render_with_sourcemap'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `each'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/plugin.rb:82:in `update_stylesheets'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/exec/sass_scss.rb:51:in `process_result'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/exec/base.rb:52:in `parse'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/lib/sass/exec/base.rb:19:in `parse!'
+E:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.24/bin/scss:13:in `<top (required)>'
+E:/Ruby23-x64/bin/scss:22:in `load'
+E:/Ruby23-x64/bin/scss:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'extjs-panel-ui'.\A         on line 1 of BusinessView.scss, in `extjs-panel-ui'\A         from line 1 of BusinessView.scss\A \A 1: @include extjs-panel-ui(\A 2:         $ui: 'chart-panel',\A 3:         $ui-header-color: #fff,\A 4:         $ui-header-glyph-color: #fff,\A 5:         $ui-header-glyph-opacity: 1,\A 6:         $ui-header-font-size: 14px,"; }

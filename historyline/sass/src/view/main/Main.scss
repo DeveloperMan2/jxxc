@@ -1,0 +1,175 @@
+/**
+ * Generates a set of style rules for the "navigation" tab UI.
+ */
+
+/**
+ * Generates a set of style rules for the "navigation" panel UI.
+ */
+/*@include extjs-panel-ui(
+    $ui: 'navigation',
+    $ui-header-color: #fff,
+    $ui-header-glyph-color: #fff,
+    $ui-header-glyph-opacity: 1,
+    $ui-header-font-size: 20px,
+    $ui-header-line-height: 24px,
+    $ui-header-font-weight: bold,
+    $ui-header-icon-height: 24px,
+    $ui-header-icon-width: 24px,
+    $ui-header-icon-spacing: 15px,
+    $ui-header-background-color: $base-color,
+    $ui-header-padding: 0,
+    $ui-header-text-margin: 36px,
+    $ui-header-noborder-adjust: false
+);*/
+
+@include extjs-panel-ui(
+        $ui: 'float-panel',
+        $ui-header-color: #fff,
+        $ui-header-glyph-color: #fff,
+        $ui-header-glyph-opacity: 1,
+        $ui-header-font-size: 14px,
+        $ui-header-line-height: 28px,
+        $ui-header-font-weight: normal,
+        $ui-header-icon-height: 24px,
+        $ui-header-icon-width: 24px,
+        $ui-header-icon-spacing: 15px,
+        $ui-header-background-color: $MyThemeFocusColor,
+        $ui-header-padding: 0,
+        $ui-header-text-margin: 2px,
+        $ui-header-noborder-adjust: false
+);
+
+.xc-play{
+    background-image: url("images/jz/play.png") !important;
+    background-size: contain;
+}
+
+.xc-pause{
+    background-image: url("images/jz/pause.png") !important;
+    background-size: contain;
+}
+
+.xc-stop{
+    background-image: url("images/jz/stop.png") !important;
+    background-size: contain;
+}
+
+.xc-check{
+    background-image: url("images/jz/check.png") !important;
+    background-size: contain;
+}
+
+.x-title-icon-navigation {
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.x-tab-icon-el-navigation {
+    font-family: FontAwesome;
+    color: #acacac;
+
+    .x-tab-over & {
+        color: #c4c4c4;
+    }
+
+    .x-tab-active & {
+        color: #fff;
+    }
+}
+
+.x-panel-header-title-navigation > .x-title-text-navigation:after {
+    top: 30px;
+    right: -24px;
+}
+
+//自定义变量
+$map-focus-text-color: #ffff00;
+$map-default-text-color: #ffffff;
+
+@include extjs-button-medium-ui(
+        $ui: 'map-tool-ui',
+        $border-width: 0px,
+        $inner-border-width: 0px,
+        $background-color: $MyThemeFocusColor,
+        $color: $map-default-text-color,
+        $color-over: $map-focus-text-color,
+        $color-pressed: $map-focus-text-color,
+        $text-padding: 5px,
+        $padding: 5px,
+        $font-size: 12px
+);
+
+//地图工具栏
+.jz-tool-terrain {
+    background-image: url("images/jz/terrain.png");
+    background-size: contain;
+}
+
+.jz-tool-vector {
+    background-image: url("images/jz/vector.png");
+    background-size: contain;
+}
+
+.jz-tool-image {
+    background-image: url("images/jz/image.png");
+    background-size: contain;
+}
+
+.jz-tool-fullscreen {
+    background-image: url("images/jz/fullscreen.png");
+    background-size: contain;
+}
+
+.jz-tool-fullextent {
+    background-image: url("images/jz/fullextent.png");
+    background-size: contain;
+}
+
+.jz-tool-query {
+    background-image: url("images/jz/query.png");
+    background-size: contain;
+}
+
+.jz-tool-special {
+    background-image: url("images/jz/special.png");
+    background-size: contain;
+}
+
+.jz-tool-clear {
+    background-image: url("images/jz/clear.png");
+    background-size: contain;
+}
+
+.jz-tool-opacity {
+    background-image: url("images/jz/opacity.png");
+    background-size: contain;
+}
+
+//地图插件
+.jz-plugin-legend {
+    background-image: url("images/jz/legend.png");
+    background-size: contain;
+}
+
+.green-anim-tooltip {
+    transition: opacity 2.0s linear; /*动画效果*/
+    font: normal 12px/12px arial, sans-serif;
+    font-family: "微软雅黑", Georgia, Serif;
+    color: green;
+}
+
+.purple-anim-tooltip {
+    transition: opacity 2.0s linear; /*动画效果*/
+    font: normal 12px/12px arial, sans-serif;
+    font-family: "微软雅黑", Georgia, Serif;
+    color: purple;
+}
+
+.red-anim-tooltip {
+    transition: opacity 1.0s linear; /*动画效果*/
+    font: normal 12px/12px arial, sans-serif;
+    font-family: "微软雅黑", Georgia, Serif;
+    color: red;
+}
