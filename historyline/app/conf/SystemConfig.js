@@ -41,7 +41,7 @@ Ext.define('historyline.conf.SystemConfig', {
     floatContainerID: 'floatContainerID',
     systemMenu: [
         {
-            name: "历史回放",
+            name: "",
             selected: true,
             init: true,
             type: "widget",
@@ -58,8 +58,8 @@ Ext.define('historyline.conf.SystemConfig', {
             floatContainerParams: {
                 gapX: 5,
                 gapY: 5,
-                w: 300,//数值或百分比，如：100%
-                h: '100%',//数值或百分比，如：100%
+                w: 92,//数值或百分比，如：100%
+                h: 28,//数值或百分比，如：100%
                 align: 'tr' //右上
             }
         }

@@ -125,8 +125,8 @@ var g = {
                     }
 
                     //公用代码
-                    g.v.floatContainer.setTitle(widget['text']);
-                    g.v.floatContainer.setIconCls(widget['iconCls']);
+                    /*g.v.floatContainer.setTitle(widget['text']);
+                    g.v.floatContainer.setIconCls(widget['iconCls']);*/
                     g.v.floatContainer.updateLayout();
                 }
             }
@@ -169,7 +169,7 @@ var g = {
                     ui: 'float-panel',
                     layout: 'fit',
                     draggable: false,
-                    collapsible: true,
+                    collapsible: false,
                     collapseToolText: '隐藏',
                     expandToolText: "展开",
                     plain: true,

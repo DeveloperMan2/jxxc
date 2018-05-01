@@ -3,6 +3,7 @@
  */
 var hv = {
     v: {
+        hlData: null,
         isShowPlanXcPath: false,//是否显示预设巡查路线
         xcPath: null,//实际巡查路线
         xcPlanPath: null,//预设巡查路线
@@ -21,7 +22,187 @@ var hv = {
             if (hData) {
                 var s = new Ext.create('Ext.data.Store', {data: hData});
                 var hlGrid = Ext.getCmp('historyLineGridID');
-                hlGrid.setStore(s);
+                if (hlGrid) {
+                    hlGrid.setStore(s);
+                }
+            }
+        },
+        /*@param hid--历史轨迹ID
+        * 通过ID调用后台返回历史轨迹数据*/
+        getHistoryData: function (hlid) {
+            if (hlid) {
+                function successCallBack(response, opts) {
+                    var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
+                    if (result) {
+                        hv.v.hlData = result;
+                        if (hv.v.xcPath) {
+                            hv.v.xcPath.remove();
+                            hv.v.xcPath = null;
+                        }
+
+                        if (hv.v.xcPlanPath) {
+                            hv.v.xcPlanPath.remove();
+                            hv.v.xcPlanPath = null;
+                        }
+
+                        if (hv.v.markerGroup) {
+                            hv.v.markerGroup.clearLayers();
+                        }
+
+                        if (hv.v.markerPlanGroup) {
+                            hv.v.markerPlanGroup.clearLayers();
+                        }
+
+                        //重点巡查点
+                        var markerIcon2 = L.icon({
+                            iconUrl: 'resources/images/xcapp/marker2.png',
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 24]
+                        });
+
+                        //一般巡查点
+                        var markerIcon1 = L.icon({
+                            iconUrl: 'resources/images/xcapp/marker1.png',
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 24]
+                        });
+
+                        //参考巡查点
+                        var markerIcon0 = L.icon({
+                            iconUrl: 'resources/images/xcapp/marker0.png',
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 24]
+                        });
+
+                        //创建实际巡查路线
+                        var nodes = result['path'];
+                        if (nodes && nodes.length > 0) {
+                            var path = [];
+                            var markers = [];
+                            Ext.each(nodes, function (node) {
+                                if (node != null) {
+                                    var seg = [node['y'], node['x']];
+                                    path.push(seg);
+
+                                    var level = node['level'];
+                                    var markerIcon = null;
+
+                                    if (level == 0) {
+                                        markerIcon = markerIcon0
+                                    }
+                                    else if (level == 1) {
+                                        markerIcon = markerIcon1
+                                    }
+                                    else {
+                                        markerIcon = markerIcon2
+                                    }
+
+
+                                    var mp = new L.marker([node['y'], node['x']], {
+                                        icon: markerIcon,
+                                        draggable: false,
+                                        title: node['desc']
+                                    });
+                                    if (node['node'] != null && node['node'] != '') {
+                                        mp.bindTooltip(node['node'], {
+                                            permanent: true,
+                                            offset: [0, 0],// 偏移
+                                            direction: "right",// 放置位置
+                                            //sticky:true,//是否标记在点上面
+                                            className: 'green-anim-tooltip'// CSS控制
+                                        }).openTooltip();
+                                    }
+                                    markers.push(mp);
+                                }
+                            });
+
+                            //创建路径
+                            if (path.length > 0) {
+                                hv.v.xcPath = L.polyline(path, {color: 'green'}).addTo(mv.v.map);
+                                mv.v.map.fitBounds(hv.v.xcPath.getBounds());
+                            }
+
+                            //创建标签分组
+                            if (markers.length > 0) {
+                                hv.v.markerGroup = L.layerGroup(markers);
+                                mv.v.map.addLayer(hv.v.markerGroup);
+                            }
+                        }
+
+                        //创建预设巡查路线
+                        var pNodes = record.get('planPath');
+                        if (pNodes && pNodes.length > 0) {
+                            var path = [];
+                            var markers = [];
+                            Ext.each(pNodes, function (node) {
+                                if (node != null) {
+                                    var seg = [node['y'], node['x']];
+                                    path.push(seg);
+
+                                    var level = node['level'];
+                                    var markerIcon = null;
+
+                                    if (level == 0) {
+                                        markerIcon = markerIcon0
+                                    }
+                                    else if (level == 1) {
+                                        markerIcon = markerIcon1
+                                    }
+                                    else {
+                                        markerIcon = markerIcon2
+                                    }
+
+
+                                    var mp = new L.marker([node['y'], node['x']], {
+                                        icon: markerIcon,
+                                        draggable: false,
+                                        title: node['desc']
+                                    });
+                                    if (node['node'] != null && node['node'] != '') {
+                                        mp.bindTooltip(node['node'], {
+                                            permanent: true,
+                                            offset: [0, 0],// 偏移
+                                            direction: "left",// 放置位置
+                                            //sticky:true,//是否标记在点上面
+                                            className: 'purple-anim-tooltip'// CSS控制
+                                        }).openTooltip();
+                                    }
+                                    markers.push(mp);
+                                }
+                            });
+
+                            //创建路径
+                            if (path.length > 0) {
+                                hv.v.xcPlanPath = L.polyline(path, {color: 'purple'});
+                            }
+
+                            //创建标签分组
+                            if (markers.length > 0) {
+                                hv.v.markerPlanGroup = L.layerGroup(markers);
+                            }
+
+                            if (hv.v.isShowPlanXcPath) {
+                                //创建路径
+                                if (hv.v.xcPlanPath) {
+                                    hv.v.xcPlanPath.addTo(mv.v.map);
+                                }
+
+                                //创建标签分组
+                                if (hv.v.markerPlanGroup) {
+                                    mv.v.map.addLayer(hv.v.markerPlanGroup);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                function failureCallBack(response, opts) {
+                    console.log('历史路线加载失败');
+                }
+
+                ajax.fn.execute({
+                    id: hlid
+                }, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
             }
         },
         //获取两点之间的距离
@@ -119,6 +300,7 @@ Ext.define('historyline.view.HistoryView', {
     //Uncomment to give this component an xtype
     xtype: 'jz-historyview',
     requires: [
+        'Ext.button.Segmented',
         'Ext.container.Container',
         'Ext.form.field.Checkbox',
         'Ext.grid.Panel',
@@ -133,6 +315,31 @@ Ext.define('historyline.view.HistoryView', {
             margin: '0 0 0 0',
             items: [
                 {
+                    xtype: 'segmentedbutton',
+                    allowMultiple: false,
+                    defaults: {
+                        border: false,
+                        scale: 'small'
+                    },
+                    items: [
+                        {
+                            iconCls: 'xc-play',
+                            tooltip: '播放',
+                            handler: this.onPlayHandler
+                        },
+                        {
+                            iconCls: 'xc-pause',
+                            tooltip: '暂停',
+                            handler: this.onPauseHandler
+                        },
+                        {
+                            iconCls: 'xc-stop',
+                            tooltip: '停止',
+                            handler: this.onStopHandler
+                        }
+                    ]
+                }
+                /*{
                     xtype: 'checkboxfield',
                     name: 'planPathId',
                     margin: '0 5 0 5',
@@ -168,8 +375,8 @@ Ext.define('historyline.view.HistoryView', {
                             }
                         }
                     }
-                },
-                {
+                },*/
+                /*{
                     xtype: 'gridpanel',
                     id: 'historyLineGridID',
                     allowDeselect: false,
@@ -218,192 +425,45 @@ Ext.define('historyline.view.HistoryView', {
                     listeners: {
                         'select': this.selectHistoryLineHandler
                     }
-                }
+                }*/
             ]
         }]
         this.callParent();
     },
     onPlayHandler: function (gp, rowIndex, colIndex, btn, timeStamp) {
-        var curItem = gp.getStore().getAt(rowIndex);
+        /*var curItem = gp.getStore().getAt(rowIndex);
         gp.getSelectionModel().select(curItem, true);
         var curData = curItem['data'];
         //开启巡查轨迹回放
-        hv.fn.startTrack(curData);
-    },
+        hv.fn.startTrack(curData);*/
+
+        //开启巡查轨迹回放
+        if(hv.v.hlData){
+            hv.fn.startTrack(hv.v.hlData);
+        }
+    }
+    ,
     onPauseHandler: function (gp, rowIndex, colIndex, btn, timeStamp) {
-        var selItem = gp.selection.data;
+        /*var selItem = gp.selection.data;
         var curItem = gp.getStore().getAt(rowIndex).data;
         //只能在选中行执行操作
         if (selItem == curItem) {
             hv.fn.pauseTrack();
-        }
+        }*/
+
+        hv.fn.pauseTrack();
     },
     onStopHandler: function (gp, rowIndex, colIndex, btn, timeStamp) {
-        var selItem = gp.selection.data;
+        /*var selItem = gp.selection.data;
         var curItem = gp.getStore().getAt(rowIndex).data;
         //只能在选中行执行操作
         if (selItem == curItem) {
             hv.fn.stopTrack();
-        }
+        }*/
+
+        hv.fn.stopTrack();
     },
     selectHistoryLineHandler: function (gp, record, index, eOpts) {
-        if (hv.v.xcPath) {
-            hv.v.xcPath.remove();
-            hv.v.xcPath = null;
-        }
 
-        if (hv.v.xcPlanPath) {
-            hv.v.xcPlanPath.remove();
-            hv.v.xcPlanPath = null;
-        }
-
-        if (hv.v.markerGroup) {
-            hv.v.markerGroup.clearLayers();
-        }
-
-        if (hv.v.markerPlanGroup) {
-            hv.v.markerPlanGroup.clearLayers();
-        }
-
-        //重点巡查点
-        var markerIcon2 = L.icon({
-            iconUrl: 'resources/images/xcapp/marker2.png',
-            iconSize: [24, 24],
-            iconAnchor: [12, 24]
-        });
-
-        //一般巡查点
-        var markerIcon1 = L.icon({
-            iconUrl: 'resources/images/xcapp/marker1.png',
-            iconSize: [24, 24],
-            iconAnchor: [12, 24]
-        });
-
-        //参考巡查点
-        var markerIcon0 = L.icon({
-            iconUrl: 'resources/images/xcapp/marker0.png',
-            iconSize: [24, 24],
-            iconAnchor: [12, 24]
-        });
-
-        //创建实际巡查路线
-        var nodes = record.get('path');
-        if (nodes && nodes.length > 0) {
-            var path = [];
-            var markers = [];
-            Ext.each(nodes, function (node) {
-                if (node != null) {
-                    var seg = [node['y'], node['x']];
-                    path.push(seg);
-
-                    var level = node['level'];
-                    var markerIcon = null;
-
-                    if (level == 0) {
-                        markerIcon = markerIcon0
-                    }
-                    else if (level == 1) {
-                        markerIcon = markerIcon1
-                    }
-                    else {
-                        markerIcon = markerIcon2
-                    }
-
-
-                    var mp = new L.marker([node['y'], node['x']], {
-                        icon: markerIcon,
-                        draggable: false,
-                        title: node['desc']
-                    });
-                    if (node['node'] != null && node['node'] != '') {
-                        mp.bindTooltip(node['node'], {
-                            permanent: true,
-                            offset: [0, 0],// 偏移
-                            direction: "right",// 放置位置
-                            //sticky:true,//是否标记在点上面
-                            className: 'green-anim-tooltip'// CSS控制
-                        }).openTooltip();
-                    }
-                    markers.push(mp);
-                }
-            });
-
-            //创建路径
-            if (path.length > 0) {
-                hv.v.xcPath = L.polyline(path, {color: 'green'}).addTo(mv.v.map);
-                mv.v.map.fitBounds(hv.v.xcPath.getBounds());
-            }
-
-            //创建标签分组
-            if (markers.length > 0) {
-                hv.v.markerGroup = L.layerGroup(markers);
-                mv.v.map.addLayer(hv.v.markerGroup);
-            }
-        }
-
-        //创建预设巡查路线
-        var pNodes = record.get('planPath');
-        if (pNodes && pNodes.length > 0) {
-            var path = [];
-            var markers = [];
-            Ext.each(pNodes, function (node) {
-                if (node != null) {
-                    var seg = [node['y'], node['x']];
-                    path.push(seg);
-
-                    var level = node['level'];
-                    var markerIcon = null;
-
-                    if (level == 0) {
-                        markerIcon = markerIcon0
-                    }
-                    else if (level == 1) {
-                        markerIcon = markerIcon1
-                    }
-                    else {
-                        markerIcon = markerIcon2
-                    }
-
-
-                    var mp = new L.marker([node['y'], node['x']], {
-                        icon: markerIcon,
-                        draggable: false,
-                        title: node['desc']
-                    });
-                    if (node['node'] != null && node['node'] != '') {
-                        mp.bindTooltip(node['node'], {
-                            permanent: true,
-                            offset: [0, 0],// 偏移
-                            direction: "left",// 放置位置
-                            //sticky:true,//是否标记在点上面
-                            className: 'purple-anim-tooltip'// CSS控制
-                        }).openTooltip();
-                    }
-                    markers.push(mp);
-                }
-            });
-
-            //创建路径
-            if (path.length > 0) {
-                hv.v.xcPlanPath = L.polyline(path, {color: 'purple'});
-            }
-
-            //创建标签分组
-            if (markers.length > 0) {
-                hv.v.markerPlanGroup = L.layerGroup(markers);
-            }
-
-            if (hv.v.isShowPlanXcPath) {
-                //创建路径
-                if (hv.v.xcPlanPath) {
-                    hv.v.xcPlanPath.addTo(mv.v.map);
-                }
-
-                //创建标签分组
-                if (hv.v.markerPlanGroup) {
-                    mv.v.map.addLayer(hv.v.markerPlanGroup);
-                }
-            }
-        }
     }
 });

@@ -9,7 +9,7 @@ Ext.application({
     extend: 'historyline.Application',
 
     requires: [
-        'historyline.view.main.Main'
+        'historyline.*'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class

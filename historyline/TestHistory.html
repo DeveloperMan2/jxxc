@@ -303,13 +303,12 @@
 
         //调用iframe页面函数
         function test() {
-            historyData = testData;
-            historyLineIframe.window.hv.fn.setHistoryData(historyData);
+            historyLineIframe.window.hv.fn.getHistoryData('123');
         }
     </script>
 </head>
 <body>
-<button onclick="test()">test</button>
+<button onclick="test()">测试</button>
 <iframe name="historyLineIframe" src="index.html"></iframe>
 </body>
 </html>

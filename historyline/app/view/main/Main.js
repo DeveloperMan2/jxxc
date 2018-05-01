@@ -310,11 +310,10 @@ var mv = {
                         {
                             xtype: 'segmentedbutton',
                             defaults: {
-                                border: false,
+                                border: false/*,
                                 ui: 'map-tool-ui',
-                                scale: 'medium'
-                            }
-                            ,
+                                scale: 'medium'*/
+                            },
                             items: [{
                                 xtype: 'button',
                                 action: 'image',
