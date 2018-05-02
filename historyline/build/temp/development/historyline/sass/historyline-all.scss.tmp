@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'historyline' );
-$image-search-path: 'E:/DSSB/Sources/jxxc/historyline/build/development/historyline/resources';
+$image-search-path: 'E:/ProjectSVN/03other/01jxxc/jxxc/historyline/build/development/historyline/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;

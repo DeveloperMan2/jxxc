@@ -87,9 +87,9 @@ Ext.define('jxxc.view.rtm.RtmController', {
             function failureCallBack(response, opts) {
             }
 
-            ajaxEx.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
+          //  ajaxEx.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
             //TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-            //ajaxEx.fn.execute(params, 'GET', conf.serviceRootUrl+'rtmstate', successCallBack, failureCallBack);
+            ajaxEx.fn.execute(params, 'GET', conf.serviceRootUrl+'rtmstate', successCallBack, failureCallBack);
         },
         daterenderHandler: function () {
             //初始化时间控件
@@ -115,12 +115,10 @@ Ext.define('jxxc.view.rtm.RtmController', {
         },
         querySearch: function () {
             var text = Ext.getCmp('rtmKeyWordId');
-            if (r.rtmMarkerGroup) {
-                r.rtmMarkerGroup.clearLayers();
-            }
 
             if (r._self) {
                 r._self.loadRtmState();
+                r._self.loadReservoirsState();
             }
 
             r.keywords = text.getValue();
@@ -143,16 +141,41 @@ Ext.define('jxxc.view.rtm.RtmController', {
                         treeCom.expandAll();
                         treeCom.updateLayout();
 
-                        var nodes = records[0]['data']['children'];
-                        if (r._self) {
-                            r._self.createReservoir(nodes);
-                        }
+                        // var nodes = records[0]['data']['children'];
+                        // if (r._self) {
+                        //     r._self.createReservoir(nodes);
+                        // }
                     }
                 },
                 scope: store,
                 add: false
             });
         },
+    //加载地图水库点信息
+    loadReservoirsState: function () {
+        var meView = this.getView();
+        var time = meView.lookupReference('rtmDateId').getRawValue();
+        var params = {time: time, keywords: Ext.getCmp('rtmKeyWordId').getValue()};
+        if (r.rtmMarkerGroup) {
+            r.rtmMarkerGroup.clearLayers();
+        }
+        function successCallBack(response, opts) {
+            //查询结果转json对象
+            var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
+            if (result) {
+                if (r._self) {
+                    r._self.createReservoir(result['children']);
+                }
+            }
+        }
+
+        function failureCallBack(response, opts) {
+        }
+
+          ajaxEx.fn.execute(params, 'GET', 'resources/data/rtmresdata.json', successCallBack, failureCallBack);
+        //TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+       // ajaxEx.fn.execute(params, 'GET', conf.serviceRootUrl+'rtmstate', successCallBack, failureCallBack);
+    },
         queryClear: function (text) {
             //清空关键字
             text.setValue('');
@@ -338,13 +361,21 @@ Ext.define('jxxc.view.rtm.RtmController', {
         },
         //TODO 2018-04-24---点击巡查路线弹出新窗口---巡查表中点击水库行只定位，不弹出窗口，如需要弹出，请去掉下面type条件判断
         rowclickHandler: function (td, record, element, rowIndex, e, eOpts) {
-            var name = record.get('task');
-            var url = record.get('url');
-            var type = record.get('type');
-            if (url && "reservoir" != type) {
-                this.createPopupWindow(name, url, '巡查路线信息加载中...', 1000);
-            }
+           if (e.position.column.xtype != 'actioncolumn') {
+               var name = record.get('task');
+               var url = record.get('url');
+               var type = record.get('type');
+               if (url && "reservoir" != type) {
+                   this.createPopupWindow(name, url, '巡查路线信息加载中...', 1000);
+               }
+           }
         },
+       cellclickHandler:function (element, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+           if (cellIndex == 0 && record.data.type == 'reservoir' && record.data.lgt != null && record.data.lat != null) {
+               var mark = L.latLng(record.data.lat, record.data.lgt);
+               mv.v.map.flyTo(mark, mv.v.map.options.crs.options.resolutions.length - 2);
+           }
+       },
         // TODO 2018-04-23---计算水库巡检状态对应的颜色
         calcColor4State: function (state) {
             switch (state) {
@@ -401,10 +432,7 @@ Ext.define('jxxc.view.rtm.RtmController', {
             var markers = [];
             if (nodes != null && nodes.length > 0) {
                 //创建水库图标
-                Ext.Array.each(nodes, function (node) {
-                    if (node && node['children'] && node['children'].length > 0) {
-                        var subNodes = node['children'];
-                        Ext.Array.each(subNodes, function (data) {
+                        Ext.Array.each(nodes, function (data) {
                             if (data && data.type == "reservoir") {
                                 var markerColor = me.calcColor4State(data.state);
                                 var markerIcon = L.AwesomeMarkers.icon({
@@ -429,8 +457,6 @@ Ext.define('jxxc.view.rtm.RtmController', {
 
                                 markers.push(skMarker);
                             }
-                        });
-                    }
                 });
                 if (markers.length > 0) {
                     r.rtmMarkerGroup = L.layerGroup(markers);

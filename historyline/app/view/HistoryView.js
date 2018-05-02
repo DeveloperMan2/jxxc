@@ -4,7 +4,7 @@
 var hv = {
     v: {
         hlData: null,
-        isShowPlanXcPath: false,//是否显示预设巡查路线
+        isShowPlanXcPath: true,//是否显示预设巡查路线
         xcPath: null,//实际巡查路线
         xcPlanPath: null,//预设巡查路线
         markerGroup: null,
@@ -130,7 +130,8 @@ var hv = {
                         }
 
                         //创建预设巡查路线
-                        var pNodes = record.get('planPath');
+                        debugger
+                        var pNodes = result['planPath'];
                         if (pNodes && pNodes.length > 0) {
                             var path = [];
                             var markers = [];
@@ -173,7 +174,7 @@ var hv = {
 
                             //创建路径
                             if (path.length > 0) {
-                                hv.v.xcPlanPath = L.polyline(path, {color: 'purple'});
+                                hv.v.xcPlanPath = L.polyline(path, {color: 'purple',dashArray:'10',dashOffset:'5'});
                             }
 
                             //创建标签分组
@@ -199,10 +200,9 @@ var hv = {
                 function failureCallBack(response, opts) {
                     console.log('历史路线加载失败');
                 }
+                ajax.fn.execute({id: hlid}, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
+              //ajax.fn.execute({id: hlid}, 'GET',servicePathUrl+'history', successCallBack, failureCallBack);
 
-                ajax.fn.execute({
-                    id: hlid
-                }, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
             }
         },
         //获取两点之间的距离
@@ -302,11 +302,7 @@ Ext.define('historyline.view.HistoryView', {
     requires: [
         'Ext.button.Segmented',
         'Ext.container.Container',
-        'Ext.form.field.Checkbox',
-        'Ext.grid.Panel',
-        'Ext.grid.column.Action',
         'Ext.layout.container.Fit',
-        'historyline.store.History'
     ],
     layout: 'fit',
     initComponent: function () {

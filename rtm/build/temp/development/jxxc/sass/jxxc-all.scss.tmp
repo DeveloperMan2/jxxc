@@ -1,5 +1,5 @@
 $app-name:  dynamic( 'jxxc' );
-$image-search-path: 'E:/DSSB/Sources/jxxc/rtm/build/development/jxxc/resources';
+$image-search-path: 'E:/ProjectSVN/03other/01jxxc/jxxc/rtm/build/development/jxxc/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;

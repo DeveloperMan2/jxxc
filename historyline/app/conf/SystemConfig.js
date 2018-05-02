@@ -9,8 +9,8 @@ Ext.define('historyline.conf.SystemConfig', {
     ],
 
     systemTitle: "历史轨迹",
-    esriMapVectorUrl:"http://localhost:6080/arcgis/rest/services/china/MapServer",
-    esriMapImgUrl:"http://192.168.0.150:6080/arcgis/rest/services/swc/sanwei/MapServer",
+    esriMapVectorUrl:"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
+    esriMapImgUrl:"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
     //地图分辨率数组
     resolutions: [ 0.043994562990939096,
         0.021997281495469548,
@@ -34,7 +34,7 @@ Ext.define('historyline.conf.SystemConfig', {
     extentRight:118.482260921593,
     extentTop:30.0790331326058,
     systemLogo: "main-icon",
-    serviceRootUrl: "http://172.16.60.204:8080/monitor/monitor/",
+    servicePathUrl: "http://172.16.60.204:8080/monitor/monitor/",
     //主容器ID
     bodyContainerID: 'bodyContainerID',
     //浮动容器ID

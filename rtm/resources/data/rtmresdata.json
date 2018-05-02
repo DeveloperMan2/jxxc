@@ -1,0 +1,62 @@
+{
+  "children": [
+    {
+      "task": "东湖水库",
+      "name": "东湖水库",
+      "addr": "沧州东街路东平村",
+      "level": 102.4,
+      "warnlevel": 125,
+      "duration": "",
+      "state": "巡检中",
+      "url": "http://www.baidu.com?taskid=1111",
+      "inspector": "",
+      "lat": 28.52964,
+      "lgt": 115.09277,
+      "type": "reservoir"
+    },
+    {
+      "task": "青山湖水库[3]",
+      "name": "青山湖水库",
+      "addr": "村寨村东街路东平村",
+      "level": 109.4,
+      "warnlevel": 120.8,
+      "duration": "",
+      "state": "正常",
+      "url": "http://www.baidu.com?taskid=1111",
+      "inspector": "",
+      "phone": "",
+      "lat": 28.34975,
+      "lgt": 115.642074,
+      "type": "reservoir"
+    },
+    {
+      "task": "青云谱水库[3]",
+      "name": "青云谱水库",
+      "addr": "小溪村东街路东平村",
+      "level": 112.4,
+      "warnlevel": 120.3,
+      "duration": "",
+      "state": "未巡检",
+      "url": "http://www.baidu.com?taskid=1111",
+      "inspector": "",
+      "lat": 28.28068,
+      "lgt": 115.83194,
+      "type": "reservoir",
+      "expanded": true
+    },
+    {
+      "task": "西湖水库[3]",
+      "name": "西湖水库",
+      "addr": "南路中路东平村",
+      "level": 106.9,
+      "warnlevel": 110.3,
+      "duration": "",
+      "state": "异常",
+      "url": "http://www.baidu.com?taskid=1111",
+      "lat": 28.314394,
+      "lgt": 116.010164,
+      "type": "reservoir"
+    }
+  ]
+}
+

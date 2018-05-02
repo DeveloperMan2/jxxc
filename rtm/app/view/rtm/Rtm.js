@@ -108,14 +108,16 @@ Ext.define('jxxc.view.rtm.Rtm', {
             items: [
                 {
                     xtype: 'datetimefield',
-                    format: 'Y-m-d H:i:s',
+                    // format: 'Y-m-d H:i:s',
+                    format: 'Y-m-d',
                     fieldLabel: '巡查时间',
                     reference: 'rtmDateId',
                     flex: 1,
                     emptyText: '请选择起始时间',
                     allowBlank: false,
                     labelWidth: 60,
-                    value: new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate(), 8, 0, 0),
+                    // value: new Date(new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate(), 8, 0, 0),
+                    value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
                     listeners: {
                         change: 'querySearch'
                     }//默认提前一天
@@ -278,12 +280,7 @@ Ext.define('jxxc.view.rtm.Rtm', {
             },
 
             listeners: {
-                'cellclick': function (element, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-                    if (cellIndex == 0 && record.data.type == 'reservoir' && record.data.lgt != null && record.data.lat != null) {
-                        var mark = L.latLng(record.data.lat, record.data.lgt);
-                        mv.v.map.flyTo(mark, mv.v.map.options.crs.options.resolutions.length - 2);
-                    }
-                },
+                'cellclick': 'cellclickHandler',
                 'rowclick': 'rowclickHandler'/*,
                 'added': 'rtmTreeAdded'*/
             }
