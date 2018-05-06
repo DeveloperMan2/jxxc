@@ -31,41 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RtmController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/rtm/RtmController.js">
+      <file leaf-file-name="SystemConfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/conf/SystemConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6840">
-              <caret line="228" column="12" lean-forward="false" selection-start-line="228" selection-start-column="12" selection-end-line="228" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Application.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="160">
+              <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -74,48 +44,28 @@
       <file leaf-file-name="Rtm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/view/rtm/Rtm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9090">
-              <caret line="303" column="40" lean-forward="false" selection-start-line="303" selection-start-column="40" selection-end-line="303" selection-end-column="40" />
+            <state relative-caret-position="-330">
+              <caret line="286" column="39" lean-forward="false" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rtmdata.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/data/rtmdata.json">
+      <file leaf-file-name="RtmController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/view/rtm/RtmController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6300">
-              <caret line="210" column="56" lean-forward="false" selection-start-line="209" selection-start-column="11" selection-end-line="210" selection-end-column="56" />
+            <state relative-caret-position="-129">
+              <caret line="416" column="4" lean-forward="false" selection-start-line="416" selection-start-column="4" selection-end-line="416" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rtmresdata.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/data/rtmresdata.json">
+      <file leaf-file-name="SearchField.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/plugin/SearchField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="2" column="5" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rtm.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sass/src/view/rtm/Rtm.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="70" column="16" lean-forward="false" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SystemConfig.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/conf/SystemConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-292">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -132,9 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadRtmState</find>
-      <find>rtmKeyWordId</find>
-      <find>serviceRootUrl</find>
       <find>treepanel</find>
       <find>rtmTreeID</find>
       <find>rtmdata</find>
@@ -162,6 +109,9 @@
       <find>calcColor4State</find>
       <find>createReservoir</find>
       <find>successCallBack</find>
+      <find>url</find>
+      <find>rtmresdataUrl</find>
+      <find>SearchField</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -203,12 +153,12 @@
         <option value="$PROJECT_DIR$/resources/libs/jedate/jedate.js" />
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/app/view/realtime/RealTimeView.js" />
-        <option value="$PROJECT_DIR$/app/conf/SystemConfig.js" />
         <option value="$PROJECT_DIR$/sass/src/view/rtm/Rtm.scss" />
         <option value="$PROJECT_DIR$/resources/data/rtmdata.json" />
         <option value="$PROJECT_DIR$/resources/data/rtmresdata.json" />
-        <option value="$PROJECT_DIR$/app/view/rtm/Rtm.js" />
+        <option value="$PROJECT_DIR$/app/conf/SystemConfig.js" />
         <option value="$PROJECT_DIR$/app/view/rtm/RtmController.js" />
+        <option value="$PROJECT_DIR$/app/view/rtm/Rtm.js" />
       </list>
     </option>
   </component>
@@ -245,6 +195,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,66 +225,12 @@
               <item name="rtm" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="realtime" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rtm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="rtm" type="462c0819:PsiDirectoryNode" />
-              <item name="Rtm.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,17 +244,17 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\resources\libs\leaflet\leaflet" />
-      <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\app\view\routeedit" />
-      <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\app\view\realtime" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ProjectSVN\03other\01jxxc\jxxc\rtm\app\view\rtm" />
       <recent name="E:\ProjectSVN\03other\01jxxc\jxxc\rtm\resources\data" />
       <recent name="E:\ProjectSVN\03other\03SLProject\rtm\app\plugin" />
       <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\resources\libs" />
       <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\resources\libs\leaflet\leaflet-dev" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\resources\libs\leaflet\leaflet" />
+      <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\app\view\routeedit" />
+      <recent name="E:\ProjectSVN\27lkk\xcappfinal\xcappfinal\app\view\realtime" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -556,11 +453,12 @@
       <workItem from="1524210758296" duration="1364000" />
       <workItem from="1525229747908" duration="7520000" />
       <workItem from="1525246799478" duration="928000" />
+      <workItem from="1525570427887" duration="4791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207342000" />
+    <option name="totallyTimeSpent" value="212133000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,9 +480,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268999" sideWeight="0.49788582" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32729805" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920802" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28158844" sideWeight="0.4704017" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28038508" sideWeight="0.4704017" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3517647" sideWeight="0.4667019" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.070998795" sideWeight="0.4667019" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -618,11 +516,6 @@
           <url>file://$PROJECT_DIR$/app/conf/SystemConfig.js</url>
           <line>49</line>
           <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/view/rtm/RtmController.js</url>
-          <line>99</line>
-          <option name="timeStamp" value="146" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -682,13 +575,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/libs/leafletesri/esri-leaflet-debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67636">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/libs/leaflet/proj4leaflet.js" />
     <entry file="file://$PROJECT_DIR$/resources/libs/leafletesri/esri-leaflet.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -989,26 +875,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/rtm/RtmController.js">
+    <entry file="file://$PROJECT_DIR$/app/plugin/SearchField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6840">
-          <caret line="228" column="12" lean-forward="false" selection-start-line="228" selection-start-column="12" selection-end-line="228" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/rtm/Rtm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9090">
-          <caret line="303" column="40" lean-forward="false" selection-start-line="303" selection-start-column="40" selection-end-line="303" selection-end-column="40" />
+        <state relative-caret-position="0">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/conf/SystemConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="160">
+          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/rtm/Rtm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="286" column="39" lean-forward="false" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/rtm/RtmController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="416" column="4" lean-forward="false" selection-start-line="416" selection-start-column="4" selection-end-line="416" selection-end-column="4" />
           <folding />
         </state>
       </provider>

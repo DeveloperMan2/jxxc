@@ -10,6 +10,7 @@ Ext.define('jxxc.view.rtm.Rtm', {
         'Ext.data.proxy.Ajax',
         'Ext.form.Label',
         'Ext.form.field.Checkbox',
+        'Ext.form.field.Date',
         'Ext.form.field.Text',
         'Ext.grid.column.Action',
         'Ext.layout.container.HBox',
@@ -19,8 +20,7 @@ Ext.define('jxxc.view.rtm.Rtm', {
         'Ext.tree.Panel',
         'jxxc.plugin.SearchField',
         'jxxc.view.rtm.RtmController',
-        'jxxc.view.rtm.RtmModel',
-        'yt.plugin.date.DateTimeField'
+        'jxxc.view.rtm.RtmModel'
     ],
 
     /*
@@ -107,7 +107,7 @@ Ext.define('jxxc.view.rtm.Rtm', {
             margin: '5 5 5 5',
             items: [
                 {
-                    xtype: 'datetimefield',
+                    xtype: 'datefield',
                     // format: 'Y-m-d H:i:s',
                     format: 'Y-m-d',
                     fieldLabel: '巡查时间',
@@ -188,31 +188,13 @@ Ext.define('jxxc.view.rtm.Rtm', {
                     width: 14,
                     height: 14,
                     style: {
-                        background: 'red'
+                        background: 'orange'
                     }
                 },
                 {
                     xtype: 'label',
                     id: 'state1Id',
-                    text: '异常()'
-                },
-                {
-                    xtype: 'component',
-                    width: 5
-                },
-                {
-                    xtype: 'label',
-                    width: 14,
-                    height: 14,
-                    style: {
-                        background: 'orange'
-                    }
-                },
-
-                {
-                    xtype: 'label',
-                    id: 'state2Id',
-                    text: '未巡检()'
+                    text: '超时()'
                 },
                 {
                     xtype: 'component',
@@ -228,21 +210,25 @@ Ext.define('jxxc.view.rtm.Rtm', {
                 },
                 {
                     xtype: 'label',
-                    id: 'state3Id',
-                    text: '巡检中()'
+                    id: 'state2Id',
+                    text: '进行中()'
+                },
+                {
+                    xtype: 'component',
+                    width: 5
                 },
                 {
                     xtype: 'label',
                     width: 14,
                     height: 14,
                     style: {
-                        background: '#A5744D'
+                        background: 'red'
                     }
                 },
                 {
                     xtype: 'label',
-                    id: 'state4Id',
-                    text: '超时()'
+                    id: 'state3Id',
+                    text: '作废()'
                 }
             ]
         }
@@ -294,24 +280,21 @@ Ext.define('jxxc.view.rtm.Rtm', {
                 getRowClass: function (record, rowIndex, rowParams, store) {
                     var cls = "";
                     var state = record.get("state");
-                    var type = record.get("type");
+                    var leaf = record.get("leaf");
                     //TODO 2018-04-23---目前为取消巡检路线变色，仅水库行按照状态变色，酌情处理
-                    if (type != null && 'reservoir' == type) {
+                    if (leaf) {
                         switch (state) {
-                            case '巡检中' :
-                                cls = 'x-grid-row-blue';
-                                break;
-                            case '未巡检' :
-                                cls = 'x-grid-row-yellow';
-                                break;
                             case '正常' :
                                 cls = 'x-grid-row-green';
                                 break;
-                            case '异常' :
-                                cls = 'x-grid-row-red';
-                                break;
                             case '超时' :
-                                cls = 'x-grid-row-gray';
+                                cls = 'x-grid-row-orange';
+                                break;
+                            case '进行中' :
+                                cls = 'x-grid-row-blue';
+                                break;
+                            case '作废' :
+                                cls = 'x-grid-row-red';
                                 break;
                         }
                     }

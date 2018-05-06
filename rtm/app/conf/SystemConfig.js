@@ -10,8 +10,8 @@ Ext.define('jxxc.conf.SystemConfig', {
 
     //systemTitle: "水库巡查",
     systemTitle:"",
-    esriMapVectorUrl:"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
-    esriMapImgUrl:"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
+    esriMapVectorUrl:"http://arcgis.vipgz1.idcfengye.com/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
+    esriMapImgUrl:"http://arcgis.vipgz1.idcfengye.com/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
 //矢量地图分辨率数组
     resolutions: [ 0.043994562990939096,
         0.021997281495469548,
@@ -36,10 +36,10 @@ Ext.define('jxxc.conf.SystemConfig', {
     extentTop:30.0790331326058,
     systemLogo: "main-icon",
     serviceRootUrl: "http://127.0.0.1:8080/server/",
-    rtmstateUrl:"http://localhost:8080/skxj/a/task/xjTaskStatistics/",
-    rtmdataUrl:"http://localhost:8080/skxj/a/task/xjTask/",
-    //rtmdataUrl:"http://localhost:8080/skxj/static/plugin/gis/resources/data/",
-    rtmplesUrl:"http://localhost:8080/skxj/a/task/xjTaskTrail/",
+    rtmstateUrl:"http://127.0.0.1:8080/skxj/a/task/xjTaskStatistics/",
+    rtmdataUrl:"http://127.0.0.1:8080/skxj/a/task/xjTask/",
+    rtmplesUrl:"http://127.0.0.1:8080/skxj/a/task/xjTaskTrail/",
+    rtmresdataUrl:"http://127.0.0.1:8080/skxj/a/task/",
     rtmhistorpahtUrl:"http://127.0.0.1:8080/rmt/",
     //主容器ID
     bodyContainerID: 'bodyContainerID',

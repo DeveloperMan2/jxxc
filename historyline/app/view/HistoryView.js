@@ -33,7 +33,8 @@ var hv = {
             if (hlid) {
                 function successCallBack(response, opts) {
                     var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
-                    if (result) {
+                    if (result && result.length > 0) {
+                    	result = result[0]
                         hv.v.hlData = result;
                         if (hv.v.xcPath) {
                             hv.v.xcPath.remove();
@@ -80,7 +81,7 @@ var hv = {
                             var path = [];
                             var markers = [];
                             Ext.each(nodes, function (node) {
-                                if (node != null) {
+                                if (node != null && node['y'] > 0 && node['x'] > 0) {
                                     var seg = [node['y'], node['x']];
                                     path.push(seg);
 
@@ -130,7 +131,6 @@ var hv = {
                         }
 
                         //创建预设巡查路线
-                        debugger
                         var pNodes = result['planPath'];
                         if (pNodes && pNodes.length > 0) {
                             var path = [];
@@ -200,8 +200,8 @@ var hv = {
                 function failureCallBack(response, opts) {
                     console.log('历史路线加载失败');
                 }
-                ajax.fn.execute({id: hlid}, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
-              //ajax.fn.execute({id: hlid}, 'GET',servicePathUrl+'history', successCallBack, failureCallBack);
+              //  ajax.fn.execute({id: hlid}, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
+              ajax.fn.execute({id: hlid}, 'GET',conf.servicePathUrl+'rtmhistory', successCallBack, failureCallBack);
 
             }
         },
@@ -226,7 +226,7 @@ var hv = {
 
                 var path = [];
                 Ext.each(nodes, function (node) {
-                    if (node != null) {
+                    if (node != null && node['y'] >0 && node['x'] > 0) {
                         var seg = [node['y'], node['x']];
                         path.push(seg);
                     }
@@ -302,7 +302,7 @@ Ext.define('historyline.view.HistoryView', {
     requires: [
         'Ext.button.Segmented',
         'Ext.container.Container',
-        'Ext.layout.container.Fit',
+        'Ext.layout.container.Fit'
     ],
     layout: 'fit',
     initComponent: function () {

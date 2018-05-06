@@ -285,6 +285,10 @@ var mv = {
             //显示配置文件配置的显示范围
             mv.v.map.fitBounds(mv.fn.fullExtent());
         },
+        getUrlParam: function (param) {
+            var params = Ext.Object.fromQueryString(location.search.substring(1));
+            return param ? params[param] : params;
+        },
         createMapToolPanel: function (parentId) {
             if (mv.v.mapToolPanel != null) {
                 return;
@@ -303,7 +307,7 @@ var mv = {
                         align: 'stretch'
                     },
                     defaults: {
-                        border: false,
+                        border: false
                         //ui: 'base-layeritem'
                     },
                     items: [
@@ -423,6 +427,10 @@ Ext.define('historyline.view.main.Main', {
                     }
 
                     mv.fn.refreshLayout(mv.v.mapDivId);
+                    
+                      //根据url获取历史轨迹ID，展示历史轨迹
+                    var lineId = mv.fn.getUrlParam('id');
+                    hv.fn.getHistoryData(lineId);
                 }
             }
         }];

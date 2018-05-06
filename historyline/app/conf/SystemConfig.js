@@ -34,7 +34,7 @@ Ext.define('historyline.conf.SystemConfig', {
     extentRight:118.482260921593,
     extentTop:30.0790331326058,
     systemLogo: "main-icon",
-    servicePathUrl: "http://172.16.60.204:8080/monitor/monitor/",
+    servicePathUrl: "http://127.0.0.1:8080/skxj/a/task/xjTaskHistory/",
     //主容器ID
     bodyContainerID: 'bodyContainerID',
     //浮动容器ID
