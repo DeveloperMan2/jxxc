@@ -357,7 +357,7 @@ var mv = {
                 case"image": {
                     if (mv.v.gaodeImgLayer == null) {
 
-                        mv.v.gaodeImgLayer = L.esri.tiledMapLayer({url: conf.esriMapImgUrl, id: "esriimage"});
+                        mv.v.gaodeImgLayer = L.esri.tiledMapLayer({url: conf.esriMapImgUrl, id: "esriimage",zoomOffset:-1});
                     }
                     mv.v.gaodeImgLayer.setOpacity(opactity);
                     mv.v.gaodeImgLayer.addTo(mv.v.map);

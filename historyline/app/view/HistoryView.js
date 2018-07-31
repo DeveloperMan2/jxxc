@@ -33,8 +33,7 @@ var hv = {
             if (hlid) {
                 function successCallBack(response, opts) {
                     var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
-                    if (result && result.length > 0) {
-                    	result = result[0]
+                    if (result) {
                         hv.v.hlData = result;
                         if (hv.v.xcPath) {
                             hv.v.xcPath.remove();
@@ -120,7 +119,7 @@ var hv = {
                             //创建路径
                             if (path.length > 0) {
                                 hv.v.xcPath = L.polyline(path, {color: 'green'}).addTo(mv.v.map);
-                                mv.v.map.fitBounds(hv.v.xcPath.getBounds());
+                               mv.v.map.fitBounds(hv.v.xcPath.getBounds(),{maxZoom:mv.v.map.options.crs.options.resolutions.length-1});
                             }
 
                             //创建标签分组
@@ -200,8 +199,8 @@ var hv = {
                 function failureCallBack(response, opts) {
                     console.log('历史路线加载失败');
                 }
-              //  ajax.fn.execute({id: hlid}, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
-              ajax.fn.execute({id: hlid}, 'GET',conf.servicePathUrl+'rtmhistory', successCallBack, failureCallBack);
+                ajax.fn.execute({id: hlid}, 'GET', 'resources/data/history.json', successCallBack, failureCallBack);
+             // ajax.fn.execute({id: hlid}, 'GET',conf.servicePathUrl+'rtmhistory', successCallBack, failureCallBack);
 
             }
         },
