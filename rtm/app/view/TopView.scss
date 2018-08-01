@@ -1,0 +1,60 @@
+//自定义变量
+$focus-text-color: #ffffff;
+$default-text-color: #c7e7d4;
+$custome-font-family: '微软雅黑';
+
+@include extjs-button-large-ui(
+        $ui: 'top-menu-ui',
+        $border-width: 0px,
+        $inner-border-width: 0px,
+        $background-color: transparent,
+        $color: $default-text-color,
+        $color-over: $focus-text-color,
+        $color-pressed: $focus-text-color,
+        $text-padding: 5px,
+        $padding: 5px,
+        $icon-size: 24px,
+        $font-size: 14px,
+        $font-family: $custome-font-family
+);
+
+@include extjs-panel-ui(
+        $ui: 'banner-panel-bgcolor',
+        $ui-body-background-color: $MyThemeColor
+);
+
+//自定义样式
+.sysTitle {
+  color: rgba(255, 255, 255,1.0);
+  font-size: 28px;
+}
+
+.main-icon {
+  background-image: url("images/jz/xc-logo.png");
+  background-size: contain;
+}
+
+.jz-menu-map-icon {
+  background-image: url("images/jz/map.png");
+  background-size: contain;
+}
+
+.jz-menu-history-icon {
+  background-image: url("images/jz/history.png");
+  background-size: contain;
+}
+
+.jz-menu-route-icon {
+  background-image: url("images/jz/route.png");
+  background-size: contain;
+}
+
+.jz-menu-realtime-icon {
+  background-image: url("images/jz/realtime.png");
+  background-size: contain;
+}
+
+.jz-menu-rtm-icon {
+  background-image: url("images/jz/realtime.png");
+  background-size: contain;
+}
